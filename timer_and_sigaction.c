@@ -67,8 +67,8 @@ int main(void)
          * memset(&timer_value, 0, sizeof(struct itimerspec));
          * timer_value.it_value.tv_sec = TIMER_FREQUENCY;
          * timer_value.it_value.tv_nsec = 0;
-         *
-         * 
+         * ret = timer_settime(timer_id, 0, &timer_value, NULL);
+         * assert(ret == 0);
          */
         alarm(5);
         while (1);
